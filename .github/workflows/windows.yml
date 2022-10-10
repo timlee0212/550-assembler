@@ -23,4 +23,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: windows_x86_app
-          path: ece550asm.exe
+          path: ece550asm*

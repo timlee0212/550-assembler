@@ -23,4 +23,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: macos11_x86_app
-          path: ece550asm.app
+          path: ece550asm*

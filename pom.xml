@@ -15,13 +15,11 @@
         <mainClass>com.ece550.MainApp</mainClass>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <icon_name>application.ico</icon_name>
     </properties>
 
     <profiles>
         <profile>
             <id>build-mac</id>
-
             <activation>
                 <os>
                     <family>mac</family>
@@ -29,6 +27,31 @@
             </activation>
             <properties>
                 <icon_name>application.icns</icon_name>
+                <build_type>app-image</build_type>
+            </properties>
+        </profile>
+        <profile>
+            <id>build-linux</id>
+            <activation>
+                <os>
+                    <family>linux</family>
+                </os>
+            </activation>
+            <properties>
+                <icon_name>application.png</icon_name>
+                <build_type>deb</build_type>
+            </properties>
+        </profile>
+        <profile>
+            <id>build-windows</id>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+            <properties>
+                <icon_name>application.ico</icon_name>
+                <build_type>exe</build_type>
             </properties>
         </profile>
     </profiles>
@@ -105,7 +128,7 @@
                                 <argument>-n</argument>
                                 <argument>ece550asm</argument>
                                 <argument>-t</argument>
-                                <argument>app-image</argument>
+                                <argument>${build_type}</argument>
                                 <argument>--runtime-image</argument>
                                 <argument>${project.build.directory}/550asm</argument>
                                 <argument>--input</argument>
