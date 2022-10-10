@@ -1,10 +1,10 @@
-name: Build on Windows
+name: Build on Ubuntu
 
 on: [push]
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v3
@@ -22,5 +22,5 @@ jobs:
         run:  mvn exec:exec@image
       - uses: actions/upload-artifact@v3
         with:
-          name: windows_x86_app
-          path: ece550asm.exe
+          name: linux_x86_app
+          path: ece550asm.*

@@ -15,7 +15,7 @@
         <mainClass>com.ece550.MainApp</mainClass>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <icon_name>applicaiton.ico</icon_name>
+        <icon_name>application.ico</icon_name>
     </properties>
 
     <profiles>
