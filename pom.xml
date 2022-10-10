@@ -62,10 +62,49 @@
                 <version>0.0.8</version>
                 <configuration>
                     <release>11</release>
-                    <jlinkImageName>hellofx</jlinkImageName>
+                    <jlinkImageName>550asm</jlinkImageName>
                     <launcher>launcher</launcher>
                     <mainClass>com.ece550.Main</mainClass>
                 </configuration>
+            </plugin>
+             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>image</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>jpackage</executable>
+                            <workingDirectory>${project.basedir}</workingDirectory>
+                            <arguments>
+                                <argument>-n</argument>
+                                <argument>ece550asm</argument>
+                                <argument>-t</argument>
+                                <argument>app-image</argument>
+                                <argument>--runtime-image</argument>
+                                <argument>${project.build.directory}/550asm</argument>
+                                <argument>--input</argument>
+                                <argument>
+                                    ${project.build.directory}
+                                </argument>
+                                <argument>--main-jar</argument>
+                                <argument>${project.artifactId}-${project.version}.jar</argument>
+                                <argument>--main-class</argument>
+                                <argument>com.ece550.Main</argument>
+                                <argument>--icon</argument>
+                                <argument>
+                                    ${project.basedir}/src/main/resources/application.icns
+                                </argument>
+                                <argument>--app-version</argument>
+                                <argument>2.1.0</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                 </executions>
             </plugin>
         </plugins>
     </build>
