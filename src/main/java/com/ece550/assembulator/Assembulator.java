@@ -158,6 +158,7 @@ public class Assembulator implements Assembler{
 		for(int i = 0; i < filteredCode.size(); ++i){
 			String instr = filteredCode.get(i);
 			String parsed = Parser.parseLine(instr);
+			System.out.println(parsed);
 			String replaced = targetReplacer(parsed, i);
 			binaryCode.add(replaced);
 		}

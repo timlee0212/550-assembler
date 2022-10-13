@@ -51,7 +51,7 @@
             </activation>
             <properties>
                 <icon_name>application.ico</icon_name>
-                <build_type>exe</build_type>
+                <build_type>app-image</build_type>
             </properties>
         </profile>
     </profiles>

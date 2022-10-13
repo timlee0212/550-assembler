@@ -41,7 +41,7 @@ public class GUI implements Executable{
     public static final String CLC_NOW = "CLC_NOW";
     public static final String FALSE = "false";
     public static final String TRUE = "true";
-    public static final Map<String, String> EXTENTIONS = Map.of("MIPS Code", "*.s", "Assembly Code", "*.asm");
+    public static final Map<String, String> EXTENTIONS = Map.of("Assembly Code", "*.asm", "MIPS Code", "*.s");
     public static final String OUTPUT_FILE_NAME = "mif_outputs";
     public static final String WINDOW_TITLE = "ECE550D Assembler v2.1";
 
